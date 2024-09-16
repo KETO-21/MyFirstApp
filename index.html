@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyFirstApp</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: futura, arial, sans-serif;
+            text-align: center;
+        }
+        html {
+            overflow: hidden;
+            padding: 50px;
+        }
+        p {
+            font-size: 40px;
+        }
+        button {
+            border: 1px solid #555;
+            padding: 10px;
+            font-size: 30px;
+            background-color: #ffe;
+            border-radius: calc(infinity * 1px);
+            color: #222;
+            transition-duration: 0.2s;
+            scale: 1;
+        }
+        button:active {
+            color: #111;
+            background-color: #eed;
+            scale: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <p id="count">0</p>
+    <p id="msg">
+        ↓ Click Here!
+    </p>
+    <button type="button" id="message" onclick="msgNum()">BUTTON</button>
+    <footer>
+        <small>&copy; 2024 keto</small>
+    </footer>
+    <script>
+        "use strict";
+
+        const msg = document.getElementById("msg");
+        const count = document.getElementById("count");
+        let num = 0;
+
+        function msgNum() {
+            if (msg.textContent !== "Hello!") {
+                msg.textContent = "Hello!";
+            } else {
+                msg.textContent = "World!";
+            }
+            num ++;
+            count.textContent = `${num} Click`;
+        }
+        
+        count.addEventListener("click", function() {
+            alert(num);
+        });
+    </script>
+</body>
+</html>
